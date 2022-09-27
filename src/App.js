@@ -1,10 +1,14 @@
 import {Routes, Route} from "react-router-dom";
+import {PizzaPage} from "./pages";
+import {Header} from "./components/header/Header";
+
 
 function App() {
   return (
     <div>
+        {<Header/>}
       <Routes>
-        <Route location={'/'}><Route/>
+        <Route path={'/'} element={<PizzaPage/>}/>
       </Routes>
     </div>
   );

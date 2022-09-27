@@ -5,12 +5,12 @@ import {urls} from "../../services";
 const Header = () => {
     return (
         <div>
-            <img src={urls.pizzaLogo} alt=""/>
-            <NavLink to={'/'}/>
-            <NavLink to={'/drinks'}/>
-            <NavLink to={'/sides'}/>
-            <NavLink to={'/deserts'}/>
-            <NavLink to={'/checkout'}/>
+            <img src={urls.pizzaLogo} alt="Logo"/>
+            <NavLink to={'/'}>Піца</NavLink>
+            <NavLink to={'/drinks'}>Напої</NavLink>
+            <NavLink to={'/sides'}>Сайди</NavLink>
+            <NavLink to={'/deserts'}>Десерти</NavLink>
+            <NavLink to={'/checkout'}>Кошик</NavLink>
         </div>
     );
 };
