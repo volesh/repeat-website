@@ -16,8 +16,17 @@
     align-items: center;
     z-index: 1;
 
-
-
+}
+.maineDivScroll{
+    background: rgba(102,51,0,0.7);
+    padding: 0 20px;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
 }
 .imgBlock{
     width: 20%;
