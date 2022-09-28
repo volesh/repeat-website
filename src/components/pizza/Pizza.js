@@ -1,29 +1,56 @@
 import React, {useEffect, useState} from "react";
 
 import css from './pizza.module.css'
+import {ButtonToBusket} from "../buttonToBusket/ButtonToBusket";
+import {ButtonAdd} from "../buttonAdd/ButtonAdd";
+import {order} from "../../configs";
+
 
 const Pizza = ({pizza}) => {
-    let [choose1, setChoose1] = useState(1)
-    let [choose2, setChoose2] = useState(1)
-    let [price, setPrice] = useState(Number(pizza.price))
+    let [choose1, setChoose1] = useState(1);
+    let [choose2, setChoose2] = useState(1);
+    let [price, setPrice] = useState(Number(pizza.price));
+    let [someOrder, setSomeOrder] = useState([])
+    let [weight, serWeight] = useState(pizza.weight)
+
+    let id = pizza.id
+    let po = order.pizaOrder
 
     const clickChooser1 = (n) =>{
         setChoose1(n)
-    }
+    };
+
     const clickChooser2 = (n) =>{
         setChoose2(n)
-    }
+    };
+
     useEffect(()=>{
+        if (choose1 === 3 && choose2===1){
+            serWeight(Number(pizza.weight) +277)
+        }else if (choose1 === 3 && choose2===2){
+            serWeight(Number(pizza.weight) +50)
+        }else if(choose1===1 && choose2===1){
+            serWeight(pizza.weight)
+        }else if(choose1===1 && choose2===2){
+            serWeight(Number(pizza.weight) -179)
+        }
         if(choose1 === 1 && choose2 === 3){
             setPrice(Number(pizza.price) + 44)
+            serWeight(Number(pizza.weight) -29)
         }else if(choose1 === 1 && choose2 === 4){
             setPrice(Number(pizza.price) + 53)
+            serWeight(Number(pizza.weight) +28)
         }else if((choose1 === 2 && choose2 === 1) || (choose1 === 2 && choose2 === 2)){
             setPrice(Number(pizza.price) + 40)
+            if(choose1===2 && choose2===2){
+                serWeight(Number(pizza.weight) -35)
+            }else serWeight(Number(pizza.weight) +195)
         }else if(choose1 === 2 && choose2 === 3){
             setPrice(Number(pizza.price) + 93)
+            serWeight(Number(pizza.weight) +180)
         }else if(choose1 === 2 && choose2 === 4){
             setPrice(Number(pizza.price) + 100)
+            serWeight(Number(pizza.weight) +234)
         }else if((choose1 === 3 && choose2 === 1) || (choose1 === 3 && choose2 === 2) || (choose1 === 3 && choose2 ===3) || (choose1 === 3 && choose2 === 4)){
             if(choose2 === 3 || choose2 === 4){
                 setChoose2(1)
@@ -41,7 +68,7 @@ const Pizza = ({pizza}) => {
 
             <div className={css.imgDiv}>
                 <img className={css.img} src={pizza.img} alt=""/>
-                <p className={css.weight}>{pizza.weight} г</p>
+                <p className={css.weight}>{weight} г</p>
             </div>
 
             <p className={css.name}>{pizza.name}</p>
@@ -64,8 +91,8 @@ const Pizza = ({pizza}) => {
             </div>
 
             <div className={css.lastDiv}>
-                <p>{price} грн</p>
-                <button>В кошик</button>
+                <p>{price} <span>грн</span></p>
+                {someOrder.includes(id)?<ButtonAdd po={po} setSomeOrder={setSomeOrder} someOrder={someOrder} id={id}/>:<ButtonToBusket po={po} setSomeOrder={setSomeOrder} someOrder={someOrder} id={id}/>}
             </div>
 
         </div>

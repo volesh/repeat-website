@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;300;400;500;600&display=swap');
+
 
 .card{
     width: 23%;
@@ -9,7 +9,6 @@
     border-radius: 20px;
     background: white;
     box-shadow: 5px 5px 10px grey;
-    font-family: 'Inter Tight', sans-serif;
     transition: all .3s ease;
 }
 .img{
@@ -107,6 +106,14 @@
 }
 .lastDiv{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+.lastDiv > p{
+    font-size: 18px;
+    font-weight: 700;
+}
+.lastDiv > p > span{
+    font-size: 14px;
+    font-weight: 500;
 }
 
