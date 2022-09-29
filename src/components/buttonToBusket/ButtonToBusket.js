@@ -8,6 +8,7 @@ const ButtonToBusket = ({setSomeOrder, someOrder, id, po}) => {
         order.push(id)
         setSomeOrder([...order])
         po.push(id)
+        console.log(po);
     }
     return (
         <div className={css.btn} onClick={click}>

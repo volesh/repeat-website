@@ -24,12 +24,12 @@
     width: 100%;
     position: fixed;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     z-index: 1;
 }
 .imgBlock{
-    width: 20%;
+    width: 25%;
     align-items: center;
     text-align: center;
 }
@@ -38,13 +38,22 @@
     height: 120px;
 }
 .navigationBlock{
-    width: 80%;
+    width: 50%;
     display: flex;
     justify-content: space-around;
+
 }
 .nav{
     color: white;
-    font-size: 16px;
+    font-size: 26px;
     font-weight: 400;
     text-decoration: none;
+}
+.navigationBlock.active{
+    color: red;
+}
+
+.busket{
+    width: 25%;
+    text-align: center;
 }

@@ -61,6 +61,8 @@ const Pizza = ({pizza}) => {
         }else {
             setPrice(Number(pizza.price))
         }
+
+
     },[choose1,choose2])
 
     return (

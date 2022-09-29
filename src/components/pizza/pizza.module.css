@@ -29,6 +29,7 @@
     align-items: center;
     text-align: center;
     overflow: hidden;
+    border-radius: 10px;
 }
 .weight{
     width: 70px;
@@ -76,9 +77,11 @@
 }
 .choose2{
     width: 45%;
+    height: 25px;
     border-radius: 20px;
     text-align: center;
     outline: none;
+    border: 1px solid #a4a4a4;
 }
 .choose1:hover{
     cursor: pointer;
@@ -87,15 +90,19 @@
     cursor: pointer;
 }
 .choose1 {
+    height: 25px;
     width: 30%;
     border-radius: 20px;
     text-align: center;
+    align-items: center;
+    border: 1px solid #a4a4a4;
 }
 .choosed1{
     width: 30%;
     border-radius: 20px;
     text-align: center;
     background: #bdbcbc;
+    border: 1px solid #a4a4a4;
 }
 
 .choosed2{
@@ -103,6 +110,7 @@
     border-radius: 20px;
     text-align: center;
     background: #bdbcbc;
+    border: 1px solid #a4a4a4;
 }
 .lastDiv{
     display: flex;
