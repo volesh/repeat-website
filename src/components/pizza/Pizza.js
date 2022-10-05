@@ -3,9 +3,11 @@ import React, {useEffect, useState} from "react";
 import css from './pizza.module.css'
 import {ButtonToBusket} from "../buttonToBusket/ButtonToBusket";
 import {ButtonAdd} from "../buttonAdd/ButtonAdd";
+import {useSelector} from "react-redux";
 
 
 const Pizza = ({pizza}) => {
+    let state = useSelector(state => state.pizzaReducer)
     let [choose1, setChoose1] = useState(1);
     let [choose2, setChoose2] = useState(1);
     let [price, setPrice] = useState(Number(pizza.price));
@@ -13,6 +15,7 @@ const Pizza = ({pizza}) => {
     let [weight, serWeight] = useState(pizza.weight)
 
     let id = pizza.id
+    console.log(state);
 
     const clickChooser1 = (n) =>{
         setChoose1(n)
@@ -92,7 +95,7 @@ const Pizza = ({pizza}) => {
 
             <div className={css.lastDiv}>
                 <p>{price} <span>грн</span></p>
-                {someOrder.includes(id)?<ButtonAdd type={'ADD_PIZZA'} id={id}/>:<ButtonToBusket type={'ADD_PIZZA'} id={id}/>}
+                {state.pizza.includes(id)?<ButtonAdd typeMinus={'DEL_PIZZA'} typePlus={'ADD_PIZZA'} id={id}/>:<ButtonToBusket type={'ADD_PIZZA'} id={id}/>}
             </div>
 
         </div>

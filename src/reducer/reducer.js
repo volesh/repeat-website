@@ -8,7 +8,10 @@ const pizzaReducer = (state={pizza:[]}, action) =>{
             console.log(state);
             return {...state, pizza: [...pizza]}
         case 'DEL_PIZZA':
-            return state
+            state.pizza.pop(action.payload)
+            let pizza1 = state.pizza
+            console.log(state);
+            return {...state, pizza: [...pizza1]}
         default:
             return state
     }
