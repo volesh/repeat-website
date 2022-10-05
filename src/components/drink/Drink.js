@@ -3,7 +3,6 @@ import {useState} from "react";
 
 import {ButtonAdd} from "../buttonAdd/ButtonAdd";
 import {ButtonToBusket} from "../buttonToBusket/ButtonToBusket";
-import {order} from "../../configs";
 import css from './drink.module.css'
 
 const Drink = ({drink}) => {
@@ -12,7 +11,6 @@ const Drink = ({drink}) => {
 
     let id = drink.id
 
-    let po = order.drinkOrder
 
     return (
         <div className={css.card}>
@@ -23,7 +21,7 @@ const Drink = ({drink}) => {
             <div className={css.volume}>{drink.volume}</div>
             <div className={css.lastDiv}>
                 <p>{drink.price} <span>грн</span></p>
-                {someOrder.includes(id)?<ButtonAdd po={po} setSomeOrder={setSomeOrder} someOrder={someOrder} id={id}/>:<ButtonToBusket po={po} setSomeOrder={setSomeOrder} someOrder={someOrder} id={id}/>}
+                {someOrder.includes(id)?<ButtonAdd type={'ADD_DRINK'} id={id}/>:<ButtonToBusket type={'ADD_DRINK'} id={id}/>}
             </div>
         </div>
     );

@@ -3,7 +3,6 @@ import React, {useEffect, useState} from "react";
 import css from './pizza.module.css'
 import {ButtonToBusket} from "../buttonToBusket/ButtonToBusket";
 import {ButtonAdd} from "../buttonAdd/ButtonAdd";
-import {order} from "../../configs";
 
 
 const Pizza = ({pizza}) => {
@@ -14,7 +13,6 @@ const Pizza = ({pizza}) => {
     let [weight, serWeight] = useState(pizza.weight)
 
     let id = pizza.id
-    let po = order.pizaOrder
 
     const clickChooser1 = (n) =>{
         setChoose1(n)
@@ -94,7 +92,7 @@ const Pizza = ({pizza}) => {
 
             <div className={css.lastDiv}>
                 <p>{price} <span>грн</span></p>
-                {someOrder.includes(id)?<ButtonAdd po={po} setSomeOrder={setSomeOrder} someOrder={someOrder} id={id}/>:<ButtonToBusket po={po} setSomeOrder={setSomeOrder} someOrder={someOrder} id={id}/>}
+                {someOrder.includes(id)?<ButtonAdd type={'ADD_PIZZA'} id={id}/>:<ButtonToBusket type={'ADD_PIZZA'} id={id}/>}
             </div>
 
         </div>

@@ -4,8 +4,8 @@ import {pizzas} from "../../configs";
 import {Pizza} from "../pizza/Pizza";
 import css from './pizzas.module.css'
 
-const Pizzas = () => {
 
+const Pizzas = () => {
 
     return (
         <div className={css.pizzasBlock}>

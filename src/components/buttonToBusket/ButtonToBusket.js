@@ -1,14 +1,15 @@
 import React from "react";
+import {useDispatch} from "react-redux";
 
 import css from './buttonToBusket.module.css'
 
-const ButtonToBusket = ({setSomeOrder, someOrder, id, po}) => {
+
+const ButtonToBusket = ({type, id}) => {
+    let dispath = useDispatch()
+
     const click = () =>{
-        let order = [...someOrder]
-        order.push(id)
-        setSomeOrder([...order])
-        po.push(id)
-        console.log(po);
+        dispath({type, payload:id})
+
     }
     return (
         <div className={css.btn} onClick={click}>

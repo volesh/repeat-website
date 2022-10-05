@@ -3,8 +3,8 @@ import {useState} from "react";
 
 import {ButtonAdd} from "../buttonAdd/ButtonAdd";
 import {ButtonToBusket} from "../buttonToBusket/ButtonToBusket";
-import {order} from "../../configs";
 import css from './side.module.css'
+
 
 const Side = ({side}) => {
 
@@ -12,7 +12,6 @@ const Side = ({side}) => {
 
     let id = side.id
 
-    let po = order.sideOrder
 
     return (
         <div className={css.card}>
@@ -24,7 +23,7 @@ const Side = ({side}) => {
             <div className={css.standart}>Стандарт</div>
             <div className={css.lastDiv}>
                 <p>{side.price} <span>грн</span></p>
-                {someOrder.includes(id)?<ButtonAdd po={po} setSomeOrder={setSomeOrder} someOrder={someOrder} id={id}/>:<ButtonToBusket po={po} setSomeOrder={setSomeOrder} someOrder={someOrder} id={id}/>}
+                {someOrder.includes(id)?<ButtonAdd type={'ADD_SIDE'} id={id}/>:<ButtonToBusket type={'ADD_SIDE'} id={id}/>}
             </div>
         </div>
     );
