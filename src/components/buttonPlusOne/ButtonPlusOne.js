@@ -1,6 +1,6 @@
 import React from "react";
 
-const Drink = () => {
+const ButtonPlusOne = () => {
     return (
         <div>
 
@@ -8,4 +8,4 @@ const Drink = () => {
     );
 };
 
-export {Drink};
+export {ButtonPlusOne};
